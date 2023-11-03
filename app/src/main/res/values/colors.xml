@@ -18,4 +18,10 @@
     <color name="backgroundDark">#040404</color>
     <color name="onBackgroundLight">#2E2E33</color>
     <color name="onBackgroundDark">#D6D6E8</color>
+
+    <color name="titleColorLight">#222831</color>
+    <color name="titleColorDark">#C7D5EA</color>
+
+    <color name="compositionLight">#AAAAAD</color>
+    <color name="compositionDark">#373737</color>
 </resources>

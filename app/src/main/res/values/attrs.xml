@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="bottomNavBarColor" format="color|reference" />
+    <attr name="titleColor" format="color|reference" />
+    <attr name="compositionColor" format="color|reference" />
 </resources>

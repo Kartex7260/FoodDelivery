@@ -15,6 +15,7 @@
         <item name="android:windowLightNavigationBar">true</item>
         <!-- Customize your theme here. -->
         <item name="background">@color/backgroundLight</item>
+        <item name="colorOnBackground">@color/onBackgroundLight</item>
         <item name="bottomNavBarColor">@color/bottomBarBackgroundLight</item>
     </style>
 

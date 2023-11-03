@@ -10,8 +10,12 @@
 
     <color name="bottomBarBackgroundLight">#f0f0f0</color>
     <color name="bottomBarBackgroundDark">#0F0F0F</color>
+
     <color name="bottomBarIconNonSelected">#7B7B7B</color>
     <color name="colorPrimary">#FD3A69</color>
+
     <color name="backgroundLight">#FBFBFB</color>
     <color name="backgroundDark">#040404</color>
+    <color name="onBackgroundLight">#2E2E33</color>
+    <color name="onBackgroundDark">#D6D6E8</color>
 </resources>

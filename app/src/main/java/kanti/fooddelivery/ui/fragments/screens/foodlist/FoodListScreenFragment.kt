@@ -1,4 +1,4 @@
-package kanti.fooddelivery.ui.fragments.screens
+package kanti.fooddelivery.ui.fragments.screens.foodlist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kanti.fooddelivery.databinding.FragmentFoodListBinding
 
-class FoodListFragment : Fragment() {
+class FoodListScreenFragment : Fragment() {
 
 	private var _viewBinding: FragmentFoodListBinding? = null
 	private val viewBinding: FragmentFoodListBinding get() = _viewBinding!!

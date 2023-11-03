@@ -2,11 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/foodListFragment">
+    app:startDestination="@id/bottomFoodMenuNav">
 
     <fragment
-        android:id="@+id/foodListFragment"
-        android:name="kanti.fooddelivery.ui.fragments.screens.FoodListFragment"
-        android:label="FoodListFragment" />
+        android:id="@+id/bottomFoodMenuNav"
+        android:name="kanti.fooddelivery.ui.fragments.screens.foodlist.FoodListScreenFragment"
+        android:label="FoodListScreenFragment" />
+
+    <fragment
+        android:id="@+id/bottomProfileNav"
+        android:name="kanti.fooddelivery.ui.fragments.screens.ProfileScreenFragment"
+        android:label="ProfileScreenFragment" />
+
+    <fragment
+        android:id="@+id/bottomShoppingCartNav"
+        android:name="kanti.fooddelivery.ui.fragments.screens.ShoppingCartScreenFragment"
+        android:label="ShoppingCartScreenFragment" />
 
 </navigation>

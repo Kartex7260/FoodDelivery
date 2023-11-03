@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_bottom_food_menu"
+        android:title="@string/food_menu"
+        android:icon="@drawable/icon_bottom_menu_food_menu" />
+
+    <item
+        android:id="@+id/menu_bottom_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/icon_bottom_menu_profile" />
+
+    <item
+        android:id="@+id/menu_bottom_shopping_cart"
+        android:title="@string/shopping_cart"
+        android:icon="@drawable/icon_bottom_menu_shopping_cart"/>
+
+</menu>

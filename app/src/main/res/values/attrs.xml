@@ -3,4 +3,5 @@
     <attr name="bottomNavBarColor" format="color|reference" />
     <attr name="titleColor" format="color|reference" />
     <attr name="compositionColor" format="color|reference" />
+    <attr name="chipUnselectedTextColor" format="color|reference" />
 </resources>

@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "FoodDelivery"
 include(":app")
- 
+include(":FoodCategoryChip")

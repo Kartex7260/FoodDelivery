@@ -4,7 +4,7 @@
     android:height="27dp"
     android:viewportWidth="24"
     android:viewportHeight="27"
-    android:tint="@color/bottomBarIconNonSelected">
+    android:tint="?attr/colorOnBackground">
   <path
       android:pathData="M14.118,5.213C14.118,4.661 13.67,4.213 13.118,4.213H11.025L11.787,2.687L15.751,1.553C16.126,1.446 16.343,1.055 16.236,0.68C16.129,0.304 15.738,0.087 15.362,0.194L10.802,1.499L9.446,4.213H1C0.448,4.213 0,4.661 0,5.213V6.746C0,7.299 0.448,7.746 1,7.746H13.118C13.67,7.746 14.118,7.298 14.118,6.746V5.213Z"
       android:fillColor="#000000"/>

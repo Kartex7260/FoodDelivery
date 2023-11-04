@@ -23,4 +23,13 @@ class FoodListScreenFragment : Fragment() {
 		return viewBinding.root
 	}
 
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+		viewBinding.apply {
+			for (i in 0..4) {
+
+			}
+		}
+	}
+
 }

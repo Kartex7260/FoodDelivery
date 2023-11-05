@@ -48,7 +48,8 @@
             android:layout_height="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            style="@style/Widget.FoodCard.PriceButton" />
+            style="@style/Widget.FoodCard.PriceButton"
+            android:singleLine="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

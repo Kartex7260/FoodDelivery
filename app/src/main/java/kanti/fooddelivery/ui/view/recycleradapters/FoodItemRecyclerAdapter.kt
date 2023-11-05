@@ -13,7 +13,7 @@ import kanti.fooddelivery.data.models.food.Food
 typealias ImageLoadFun = (image: ImageView, imageUrl: String) -> Unit
 
 class FoodItemRecyclerAdapter(
-	private val items: List<Food>,
+	items: List<Food>,
 	private val loadImage: ImageLoadFun
 ) : RecyclerView.Adapter<FoodItemRecyclerAdapter.FoodItemViewHolder>() {
 
@@ -25,6 +25,11 @@ class FoodItemRecyclerAdapter(
 		val minPriceButton: Button = itemView.findViewById(R.id.viewFoodCardMinPrice)
 
 	}
+
+	private var items: List<Food> = items
+		set(value) {
+			field = value
+		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodItemViewHolder {
 		return FoodItemViewHolder(

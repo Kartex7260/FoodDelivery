@@ -60,11 +60,11 @@ dependencies {
 	implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
 //	DI
-	implementation("com.google.dagger:hilt-android:2.48")
-	kapt("com.google.dagger:hilt-android-compiler:2.48")
+	implementation("com.google.dagger:hilt-android:2.48.1")
+	kapt("com.google.dagger:hilt-android-compiler:2.48.1")
 
 //	Data
-	implementation("androidx.room:room-runtime:2.6.0")
+	implementation("androidx.room:room-ktx:2.6.0")
 	ksp("androidx.room:room-compiler:2.6.0")
 
 //	Net

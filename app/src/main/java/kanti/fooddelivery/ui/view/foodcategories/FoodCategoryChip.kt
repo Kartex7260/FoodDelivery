@@ -20,7 +20,7 @@ object FoodCategoryChip {
 		val elevationChecked = context.resources.getDimension(R.dimen.chipFoodCategoryChecked)
 		val elevationUnchecked = context.resources.getDimension(R.dimen.chipFoodCategoryUnchecked)
 		return (LayoutInflater.from(context)
-			.inflate(R.layout.chip_food_category, root) as Chip)
+			.inflate(R.layout.view_food_category, root) as Chip)
 			.apply {
 			setOnCheckedChangeListener { buttonView, isChecked ->
 				if (isChecked) {

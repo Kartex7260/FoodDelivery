@@ -4,14 +4,29 @@
     <style name="Widget.Chip.FoodCategory" parent="Widget.MaterialComponents.Chip.Choice">
 
         <item name="android:elevation">@dimen/chipFoodCategoryUnchecked</item>
-        <item name="android:textAppearance">@style/TextAppearance_Chip_FoodCategory</item>
+        <item name="android:textAppearance">@style/TextAppearance.Chip.FoodCategory.Unchecked</item>
         <item name="chipCornerRadius">6dp</item>
         <item name="chipMinTouchTargetSize">32dp</item>
         <item name="android:textAlignment">center</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Chip.FoodCategory</item>
+        <item name="android:textColor">@color/food_category_text_color_selector</item>
+    </style>
+    
+    <style name="ThemeOverlay.Chip.FoodCategory" parent="">
+        
+        <item name="colorOnSurface">?attr/background</item>
+        <item name="colorOnSurfaceVariant">@color/onSurfaceVariant</item>
+        
     </style>
 
-    <style name="TextAppearance_Chip_FoodCategory">
+    <style name="TextAppearance.Chip.FoodCategory.Unchecked" parent="">
         <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextAppearance.Chip.FoodCategory.Checked" parent="">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

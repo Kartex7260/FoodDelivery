@@ -27,10 +27,12 @@ object FoodCategoryChip {
 					context.elevationAnimation(elevationUnchecked, elevationChecked) {
 						elevation = it
 					}
+					setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Checked)
 				} else {
 					context.elevationAnimation(elevationChecked, elevationUnchecked) {
 						elevation = it
 					}
+					setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Unchecked)
 				}
 				listener?.onCheckedChanged(buttonView, isChecked)
 			}

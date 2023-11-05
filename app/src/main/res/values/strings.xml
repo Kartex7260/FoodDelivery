@@ -4,6 +4,6 @@
     <string name="profile_screen">Profile screen</string>
     <string name="shopping_cart_screen">Shopping cart</string>
 
-    <string name="view_food_card_price_from">fr</string>
+    <string name="view_food_card_price_from">fr.</string>
     <string name="view_food_card_price_currency">r</string>
 </resources>

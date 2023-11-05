@@ -44,7 +44,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/viewFoodCardMinPrice"
-            android:layout_width="87dp"
+            android:layout_width="wrap_content"
+            android:minWidth="88dp"
             android:layout_height="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

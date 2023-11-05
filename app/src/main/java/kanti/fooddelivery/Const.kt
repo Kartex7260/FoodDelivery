@@ -9,4 +9,6 @@ object Const {
 	const val HEADER_RAPIDAPI_HOST_KEY = "X-RapidAPI-Host"
 	const val HEADER_RAPIDAPI_HOST_VALUE = "pizzaallapala.p.rapidapi.com"
 
+	const val DATABASE_NAME = "food_delivery"
+
 }

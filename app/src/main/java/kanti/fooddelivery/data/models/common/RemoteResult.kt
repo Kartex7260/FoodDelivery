@@ -6,9 +6,9 @@ data class RemoteResult<T>(
 ) {
 	sealed class Type(val message: String? = null) {
 		data object Success : Type()
-		sealed class NoConnection(message: String? = null) : Type(message)
-		sealed class NoAuthorization(message: String? = null) : Type(message)
-		sealed class Fail(message: String? = null) : Type(message)
+		class NoConnection(message: String? = null) : Type(message)
+		class NoAuthorization(message: String? = null) : Type(message)
+		class Fail(message: String? = null) : Type(message)
 	}
 
 }

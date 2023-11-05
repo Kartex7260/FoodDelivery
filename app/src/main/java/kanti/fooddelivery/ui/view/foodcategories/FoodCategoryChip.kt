@@ -22,20 +22,20 @@ object FoodCategoryChip {
 		return (LayoutInflater.from(context)
 			.inflate(R.layout.view_food_category, root) as Chip)
 			.apply {
-			setOnCheckedChangeListener { buttonView, isChecked ->
-				if (isChecked) {
-					context.elevationAnimation(elevationUnchecked, elevationChecked) {
-						elevation = it
+				setOnCheckedChangeListener { buttonView, isChecked ->
+					if (isChecked) {
+						context.elevationAnimation(elevationUnchecked, elevationChecked) {
+							elevation = it
+						}
+						setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Checked)
+					} else {
+						context.elevationAnimation(elevationChecked, elevationUnchecked) {
+							elevation = it
+						}
+						setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Unchecked)
 					}
-					setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Checked)
-				} else {
-					context.elevationAnimation(elevationChecked, elevationUnchecked) {
-						elevation = it
-					}
-					setTextAppearance(R.style.TextAppearance_Chip_FoodCategory_Unchecked)
+					listener?.onCheckedChanged(buttonView, isChecked)
 				}
-				listener?.onCheckedChanged(buttonView, isChecked)
-			}
 		}
 	}
 

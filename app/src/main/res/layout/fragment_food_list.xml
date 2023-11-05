@@ -93,7 +93,8 @@
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     app:chipSpacingHorizontal="8dp"
-                    app:singleSelection="true">
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
                 </com.google.android.material.chip.ChipGroup>
 

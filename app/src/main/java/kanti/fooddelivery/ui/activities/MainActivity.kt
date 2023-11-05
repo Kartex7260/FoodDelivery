@@ -6,9 +6,11 @@ import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import kanti.fooddelivery.R
 import kanti.fooddelivery.databinding.ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
 	private lateinit var viewBinding: ActivityMainBinding

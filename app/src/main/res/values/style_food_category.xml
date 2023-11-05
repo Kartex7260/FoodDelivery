@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Chip.FoodCategory" parent="Widget.MaterialComponents.Chip.Choice">
+
+        <item name="android:elevation">@dimen/chipFoodCategoryUnchecked</item>
+        <item name="android:textAppearance">@style/TextAppearance_Chip_FoodCategory</item>
+        <item name="chipCornerRadius">6dp</item>
+        <item name="foregroundInsidePadding">false</item>
+        <item name="minWidth">88dp</item>
+        <item name="height">32dp</item>
+    </style>
+
+    <style name="TextAppearance_Chip_FoodCategory">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

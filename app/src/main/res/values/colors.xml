@@ -7,5 +7,8 @@
 
     <color name="foodCardBody2">#AAAAAD</color>
 
-    <color name="onSurfaceVariant">#263238</color>
+    <color name="bottomNavigationIconInactive">#263238</color>
+
+    <color name="onSurfaceVariant">#C3C4C9</color>
+    <color name="onSurface">#C3C4C9</color>
 </resources>

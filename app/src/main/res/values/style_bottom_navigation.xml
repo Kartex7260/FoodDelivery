@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigation">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.BottomNavigation</item>
+    </style>
+
+    <style name="ThemeOverlay.BottomNavigation" parent="">
+        <item name="colorOnSurfaceVariant">@color/bottomNavigationIconInactive</item>
+        <item name="backgroundTint">#F0F0F0</item>
+    </style>
+
+</resources>

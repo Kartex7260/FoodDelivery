@@ -4,11 +4,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
-abstract class ErrorViewOwner {
+interface ErrorViewOwner {
 
-	abstract val root: View
-	abstract val message: TextView
-	abstract val button: Button
+	val root: View
+	val message: TextView
+	val button: Button
 
 	fun show(
 		message: String = "",

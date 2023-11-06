@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:icon="@drawable/icon_toolbar_city_selector"
-            app:iconGravity="end"/>
+            app:iconGravity="end" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/foodListQrButton"

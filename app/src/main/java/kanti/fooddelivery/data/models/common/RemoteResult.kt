@@ -28,3 +28,23 @@ fun RemoteResult.Type.toRepositoryType(): RepositoryResult.Type {
 		is RemoteResult.Type.Fail -> RepositoryResult.Type.Fail(message)
 	}
 }
+
+val <T> RemoteResult<T>.isNull: Boolean get() {
+	return value == null
+}
+
+val <T> RemoteResult<T>.isSuccess: Boolean get() {
+	return type is RemoteResult.Type.Success
+}
+
+val <T> RemoteResult<T>.isNoConnection: Boolean get() {
+	return type is RemoteResult.Type.NoConnection
+}
+
+val <T> RemoteResult<T>.isNoAuthorization: Boolean get() {
+	return type is RemoteResult.Type.NoAuthorization
+}
+
+val <T> RemoteResult<T>.isFail: Boolean get() {
+	return type is RemoteResult.Type.Fail
+}

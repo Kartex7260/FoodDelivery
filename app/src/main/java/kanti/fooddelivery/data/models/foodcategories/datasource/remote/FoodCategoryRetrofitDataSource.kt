@@ -14,15 +14,9 @@ class FoodCategoryRetrofitDataSource @Inject constructor(
 	override suspend fun getFoodCategories(): RemoteResult<List<FoodCategory>> {
 		return remoteTryCatch {
 			try {
-				val foodCategoriesCall = foodCategoryService.getFoodCategories()
-				val foodCategoriesResponse = foodCategoriesCall.awaitResponse()
+				val foodCategoriesResponse = foodCategoryService.getFoodCategories()
 				RemoteResult(
-					value = foodCategoriesResponse.body()?.asFoodCategories,
-					type = if (foodCategoriesResponse.isSuccessful) {
-						RemoteResult.Type.Success
-					} else {
-						RemoteResult.Type.Fail(foodCategoriesResponse.message())
-					}
+					value = foodCategoriesResponse.asFoodCategories
 				)
 			} catch (ex: IOException) {
 				RemoteResult(type = RemoteResult.Type.NoConnection(ex.message))

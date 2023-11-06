@@ -1,5 +1,6 @@
 package kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,6 +23,8 @@ class FoodListScreenViewModel @Inject constructor(
 	private val foodCategoryRepository: FoodCategoryRepository,
 	private val discountRepository: DiscountRepository
 ) : ViewModel() {
+
+	private val logTag = "FoodListScreenViewModel"
 
 	private val foodDataMutex = Mutex()
 	private val _foodUiState = MutableStateFlow(FoodListScreenUiState())
@@ -50,10 +53,11 @@ class FoodListScreenViewModel @Inject constructor(
 
 			launch {
 				foodFlow.collectLatest { repositoryResult ->
+					Log.d(logTag, "FoodFlow emit data = $repositoryResult")
 					foodDataMutex.withLock {
 						_foodUiState.value = _foodUiState.value.copy(
 							foodData = _foodUiState.value.foodData.copy(
-								food = repositoryResult.value
+								food = repositoryResult.value ?: listOf()
 							),
 							type = repositoryResult.type
 						)
@@ -65,7 +69,7 @@ class FoodListScreenViewModel @Inject constructor(
 					foodDataMutex.withLock {
 						_foodUiState.value = _foodUiState.value.copy(
 							foodData = _foodUiState.value.foodData.copy(
-								foodCategory = repositoryResult.value
+								foodCategory = repositoryResult.value ?: listOf()
 							),
 							type = repositoryResult.type
 						)

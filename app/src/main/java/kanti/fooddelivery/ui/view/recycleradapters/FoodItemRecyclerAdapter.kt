@@ -1,5 +1,6 @@
 package kanti.fooddelivery.ui.view.recycleradapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,7 @@ import kanti.fooddelivery.data.models.food.Food
 typealias ImageLoadFun = (image: ImageView, imageUrl: String) -> Unit
 
 class FoodItemRecyclerAdapter(
-	items: List<Food>,
+	items: List<Food> = listOf(),
 	private val loadImage: ImageLoadFun
 ) : RecyclerView.Adapter<FoodItemRecyclerAdapter.FoodItemViewHolder>() {
 
@@ -26,9 +27,11 @@ class FoodItemRecyclerAdapter(
 
 	}
 
-	private var items: List<Food> = items
+	var items: List<Food> = items
+		@SuppressLint("NotifyDataSetChanged")
 		set(value) {
 			field = value
+			notifyDataSetChanged()
 		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodItemViewHolder {

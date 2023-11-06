@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_screen">Экран профиля</string>
+    <string name="shopping_cart_screen">Экран корзины</string>
+
+    <string name="view_food_card_price_from">от</string>
+    <string name="view_food_card_price_currency">р</string>
+
+    <string name="no_connectivity">Отсутствует подключение к интернету</string>
+    <string name="update_connectivity">Обновить</string>
+    
+    <string name="food_menu">Меню</string>
+    <string name="profile">Профиль</string>
+    <string name="shopping_cart">Корзина</string>
+</resources>

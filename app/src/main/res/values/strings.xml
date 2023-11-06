@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FoodDelivery</string>
+    <string name="app_name" translatable="false">FoodDelivery</string>
 
     <string name="profile_screen">Profile screen</string>
     <string name="shopping_cart_screen">Shopping cart</string>
@@ -9,4 +9,8 @@
 
     <string name="no_connectivity">There is no internet connection</string>
     <string name="update_connectivity">Update</string>
+
+    <string name="food_menu">Menu</string>
+    <string name="profile">Profile</string>
+    <string name="shopping_cart">Cart</string>
 </resources>

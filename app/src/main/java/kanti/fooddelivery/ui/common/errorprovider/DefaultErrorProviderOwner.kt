@@ -21,6 +21,7 @@ class DefaultErrorProviderOwner(
 		} else {
 			errorViewOwner.show(
 				message = _errorProvider!!.message,
+				buttonText = _errorProvider!!.buttonText,
 				callback = _errorProvider!!.callback
 			)
 		}

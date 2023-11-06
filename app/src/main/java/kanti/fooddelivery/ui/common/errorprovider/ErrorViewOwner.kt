@@ -12,9 +12,11 @@ interface ErrorViewOwner {
 
 	fun show(
 		message: String = "",
+		buttonText: String = "",
 		callback: () -> Unit
 	) {
 		this.message.text = message
+		button.text = buttonText
 		button.setOnClickListener { callback() }
 		root.visibility = View.VISIBLE
 	}
@@ -22,6 +24,7 @@ interface ErrorViewOwner {
 	fun hide() {
 		root.visibility = View.GONE
 		this.message.text = ""
+		button.text = ""
 		button.setOnClickListener(null)
 	}
 

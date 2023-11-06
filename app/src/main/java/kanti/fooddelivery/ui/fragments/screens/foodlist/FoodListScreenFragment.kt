@@ -89,7 +89,8 @@ class FoodListScreenFragment : Fragment() {
 			}
 			is RepositoryResult.Type.NoConnection -> {
 				errorProvider = ErrorProvider(
-					getString(R.string.no_connectivity)
+					getString(R.string.no_connectivity),
+					getString(R.string.update_connectivity)
 				) {
 					viewModel.getData()
 				}

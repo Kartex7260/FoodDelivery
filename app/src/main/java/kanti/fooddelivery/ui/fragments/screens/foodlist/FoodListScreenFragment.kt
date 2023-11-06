@@ -74,7 +74,7 @@ class FoodListScreenFragment : Fragment() {
 			if (process) {
 				progressView.visibility = View.VISIBLE
 			} else {
-				progressView.visibility = View.INVISIBLE
+				progressView.visibility = View.GONE
 			}
 		}
 	}

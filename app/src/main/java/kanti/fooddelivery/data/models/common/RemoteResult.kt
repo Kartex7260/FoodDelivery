@@ -9,6 +9,10 @@ data class RemoteResult<T>(
 		class NoConnection(message: String? = null) : Type(message)
 		class NoAuthorization(message: String? = null) : Type(message)
 		class Fail(message: String? = null) : Type(message)
+
+		override fun toString(): String {
+			return "${javaClass.simpleName} ($message)"
+		}
 	}
 
 }

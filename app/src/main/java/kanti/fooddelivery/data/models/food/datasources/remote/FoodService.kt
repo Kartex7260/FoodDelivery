@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface FoodService {
 
 	@GET("productos")
-	suspend fun getFoods(): Call<FoodMetaData>
+	suspend fun getFoods(): FoodMetaData
 
 }

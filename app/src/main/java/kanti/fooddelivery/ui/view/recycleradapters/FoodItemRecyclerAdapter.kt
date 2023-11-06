@@ -60,7 +60,8 @@ class FoodItemRecyclerAdapter(
 				append(currencyPostfix)
 			}
 
-			loadImage(imageView, food.imageUrl)
+			if (food.imageUrl != null)
+				loadImage(imageView, food.imageUrl)
 		}
 	}
 

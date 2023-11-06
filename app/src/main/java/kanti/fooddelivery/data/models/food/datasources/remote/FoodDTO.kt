@@ -14,21 +14,21 @@ data class FoodMetaData(
 }
 
 data class FoodDTO(
-	val id: Int,
-	@SerializedName("nombre") val title: String,
-	@SerializedName("descripcion") val composition: String,
-	@SerializedName("precio") val minPrice: Int,
-	@SerializedName("linkImagen") val imageUrl: String,
-	@SerializedName("vendible") val foodType: Int
+	val id: Int?,
+	@SerializedName("nombre") val title: String?,
+	@SerializedName("descripcion") val composition: String?,
+	@SerializedName("precio") val minPrice: Int?,
+	@SerializedName("linkImagen") val imageUrl: String?,
+	@SerializedName("vendible") val foodType: Int?
 )
 
 val FoodDTO.asFood: Food get() {
 	return Food(
-		id = id,
-		title = title,
-		composition = composition,
-		minPrice = minPrice,
+		id = id ?: 0,
+		title = title ?: "",
+		composition = composition ?: "",
+		minPrice = minPrice ?: 0,
 		imageUrl = imageUrl,
-		foodType = foodType
+		foodType = foodType ?: 0
 	)
 }

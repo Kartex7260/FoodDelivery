@@ -4,7 +4,7 @@ suspend fun <T> localTryCatch(block: suspend () -> LocalResult<T>): LocalResult<
 	return try {
 		block()
 	} catch (t: Throwable) {
-		LocalResult(type = LocalResult.Type.Fail(t.message))
+		LocalResult(type = LocalResult.Type.Fail("localTryCatch ${t.javaClass.simpleName}:  ${t.message}"))
 	}
 }
 
@@ -12,6 +12,6 @@ suspend fun <T> remoteTryCatch(block: suspend () -> RemoteResult<T>): RemoteResu
 	return try {
 		block()
 	} catch (t: Throwable) {
-		RemoteResult(type = RemoteResult.Type.Fail(t.message))
+		RemoteResult(type = RemoteResult.Type.Fail("remoteTryCatch ${t.javaClass.simpleName}: ${t.message}"))
 	}
 }

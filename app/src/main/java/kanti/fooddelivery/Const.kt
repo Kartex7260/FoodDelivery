@@ -11,4 +11,6 @@ object Const {
 
 	const val DATABASE_NAME = "food_delivery"
 
+	const val CACHE_FILE_NAME = "food_delivery_food_image"
+
 }

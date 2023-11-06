@@ -8,6 +8,7 @@ import android.widget.ImageView
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import coil.imageLoader
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import kanti.fooddelivery.R
@@ -18,6 +19,7 @@ import kanti.fooddelivery.databinding.FragmentFoodListBinding
 import kanti.fooddelivery.ui.common.errorprovider.ErrorProvider
 import kanti.fooddelivery.ui.common.errorprovider.errorProvider
 import kanti.fooddelivery.ui.common.flowobserver.observe
+import kanti.fooddelivery.ui.common.imageRequest
 import kanti.fooddelivery.ui.common.progressindicatorowner.requireProgressIndicator
 import kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel.FoodDataUiState
 import kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel.FoodListScreenViewModel
@@ -34,6 +36,8 @@ class FoodListScreenFragment : Fragment() {
 	private val viewModel: FoodListScreenViewModel by viewModels()
 
 	private val foodListRecyclerAdapter = FoodItemRecyclerAdapter { image: ImageView, imageUrl: String ->
+		val imageRequest = requireContext().imageRequest(viewLifecycleOwner, image, imageUrl)
+		requireContext().imageLoader.enqueue(imageRequest)
 	}
 	private val discountRecyclerAdapter = DiscountRecyclerAdapter { image: ImageView, imageUrl: String ->
 		val id = imageUrl.toInt()

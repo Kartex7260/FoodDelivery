@@ -19,6 +19,7 @@ import kanti.fooddelivery.ui.common.progressindicatorowner.requireProgressIndica
 import kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel.FoodDataUiState
 import kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel.FoodListScreenViewModel
 import kanti.fooddelivery.ui.view.foodcategories.FoodCategoryChip
+import kanti.fooddelivery.ui.view.recycleradapters.DiscountRecyclerAdapter
 import kanti.fooddelivery.ui.view.recycleradapters.FoodItemRecyclerAdapter
 
 @AndroidEntryPoint
@@ -30,6 +31,10 @@ class FoodListScreenFragment : Fragment() {
 	private val viewModel: FoodListScreenViewModel by viewModels()
 
 	private val foodListRecyclerAdapter = FoodItemRecyclerAdapter { image: ImageView, imageUrl: String ->
+	}
+	private val discountRecyclerAdapter = DiscountRecyclerAdapter { image: ImageView, imageUrl: String ->
+		val id = imageUrl.toInt()
+		image.setImageResource(id)
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +50,7 @@ class FoodListScreenFragment : Fragment() {
 		if (_viewBinding == null) {
 			_viewBinding = FragmentFoodListBinding.inflate(inflater, container, false)
 			viewBinding.foodListRecyclerView.adapter = foodListRecyclerAdapter
+			viewBinding.discountsRecyclerView.adapter = discountRecyclerAdapter
 		}
 		return viewBinding.root
 	}
@@ -56,6 +62,10 @@ class FoodListScreenFragment : Fragment() {
 			showProcess(uiState.process)
 			showUiStateType(uiState.type)
 			showFoodData(uiState.foodData)
+		}
+
+		viewLifecycleOwner.observe(viewModel.discountUiState) { uiState ->
+			discountRecyclerAdapter.items = uiState.discount ?: listOf()
 		}
 	}
 

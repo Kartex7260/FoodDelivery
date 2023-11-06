@@ -1,5 +1,6 @@
 package kanti.fooddelivery.ui.view.recycleradapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,13 +11,15 @@ import kanti.fooddelivery.R
 import kanti.fooddelivery.data.models.discounts.Discount
 
 class DiscountRecyclerAdapter(
-	items: List<Discount>,
-	private val loadImage: (ImageView, String) -> Unit
+	items: List<Discount> = listOf(),
+	private val loadImage: ImageLoadFun
 ) : RecyclerView.Adapter<DiscountRecyclerAdapter.DiscountViewHolder>() {
 
 	var items: List<Discount> = items
+		@SuppressLint("NotifyDataSetChanged")
 		set(value) {
 			field = value
+			notifyDataSetChanged()
 		}
 
 	class DiscountViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

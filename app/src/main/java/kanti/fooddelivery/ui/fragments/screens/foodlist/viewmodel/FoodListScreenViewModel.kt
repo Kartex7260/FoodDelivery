@@ -7,6 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kanti.fooddelivery.data.models.discounts.DiscountRepository
 import kanti.fooddelivery.data.models.food.FoodRepository
 import kanti.fooddelivery.data.models.foodcategories.FoodCategoryRepository
+import kanti.fooddelivery.data.models.region.RegionRepository
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,7 +22,8 @@ import javax.inject.Inject
 class FoodListScreenViewModel @Inject constructor(
 	private val foodRepository: FoodRepository,
 	private val foodCategoryRepository: FoodCategoryRepository,
-	private val discountRepository: DiscountRepository
+	private val discountRepository: DiscountRepository,
+	private val regionRepository: RegionRepository
 ) : ViewModel() {
 
 	private val logTag = "FoodListScreenViewModel"
@@ -33,14 +35,19 @@ class FoodListScreenViewModel @Inject constructor(
 	private val _discountUiState = MutableStateFlow(DiscountUiState())
 	val discountUiState = _discountUiState.asStateFlow()
 
+	private val _regionUiState = MutableStateFlow(RegionUiState())
+	val regionUiState = _regionUiState.asStateFlow()
+
 	fun getData() {
 		_foodUiState.value = _foodUiState.value.copy(process = true)
 		val foodDataJob = getFoodData()
 		val discountDataJob = getDiscountData()
+		val regionDataJob = getRegionData()
 		viewModelScope.launch {
 			listOf(
 				foodDataJob,
-				discountDataJob
+				discountDataJob,
+				regionDataJob
 			).joinAll()
 			_foodUiState.value = _foodUiState.value.copy(process = false)
 		}
@@ -86,6 +93,15 @@ class FoodListScreenViewModel @Inject constructor(
 			_discountUiState.value = _discountUiState.value.copy(
 				discount = discountData.value,
 				type = discountData.type
+			)
+		}
+	}
+
+	private fun getRegionData(): Job {
+		return viewModelScope.launch {
+			val regionData = regionRepository.getCurrentRegion()
+			_regionUiState.value = _regionUiState.value.copy(
+				region = regionData.value
 			)
 		}
 	}

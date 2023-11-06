@@ -74,6 +74,10 @@ class FoodListScreenFragment : Fragment() {
 		viewLifecycleOwner.observe(viewModel.discountUiState) { uiState ->
 			discountRecyclerAdapter.items = uiState.discount ?: listOf()
 		}
+
+		viewLifecycleOwner.observe(viewModel.regionUiState) { uiState ->
+			viewBinding.foodListCitySelectorButton.text = uiState.region?.name ?: ""
+		}
 	}
 
 	private fun showProcess(process: Boolean) {

@@ -24,13 +24,13 @@ class FoodRepositoryImpl @Inject constructor(
 		return flow {
 			val remoteData = foodRemote.getFoods()
 			logger.d(logTag, "FoodRemote return data=$remoteData")
+			emit(remoteData.toRepositoryResult())
 			if (!remoteData.isSuccess) {
 				val localData = foodLocal.getFoods()
 				emit(localData.toRepositoryResult())
 				return@flow
 			}
 
-			emit(remoteData.toRepositoryResult())
 			if (!remoteData.isNull) {
 				deleteAllAndInsert(remoteData.value!!)
 			}

@@ -5,5 +5,5 @@ import kanti.fooddelivery.data.models.common.RepositoryResult
 data class FoodListScreenUiState(
 	val foodData: FoodDataUiState = FoodDataUiState(),
 	val process: Boolean = false,
-	val type: RepositoryResult.Type = RepositoryResult.Type.Success
+	val type: RepositoryResult.Type = RepositoryResult.Type.SuccessRemote
 )

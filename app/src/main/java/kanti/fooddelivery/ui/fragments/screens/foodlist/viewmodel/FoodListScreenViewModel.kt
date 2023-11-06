@@ -53,7 +53,7 @@ class FoodListScreenViewModel @Inject constructor(
 
 			launch {
 				foodFlow.collectLatest { repositoryResult ->
-					Log.d(logTag, "FoodFlow emit data = $repositoryResult")
+					Log.d(logTag, "FoodFlow emit data type = ${repositoryResult.type}")
 					foodDataMutex.withLock {
 						_foodUiState.value = _foodUiState.value.copy(
 							foodData = _foodUiState.value.foodData.copy(
@@ -66,6 +66,7 @@ class FoodListScreenViewModel @Inject constructor(
 			}
 			launch {
 				foodCategoryFlow.collectLatest { repositoryResult ->
+					Log.d(logTag, "FoodCategoryFlow emit data type = ${repositoryResult.type}")
 					foodDataMutex.withLock {
 						_foodUiState.value = _foodUiState.value.copy(
 							foodData = _foodUiState.value.foodData.copy(

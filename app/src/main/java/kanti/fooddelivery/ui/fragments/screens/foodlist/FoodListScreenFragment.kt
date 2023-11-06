@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
+import kanti.fooddelivery.R
 import kanti.fooddelivery.data.models.common.RepositoryResult
 import kanti.fooddelivery.data.models.food.Food
 import kanti.fooddelivery.data.models.foodcategories.FoodCategory
 import kanti.fooddelivery.databinding.FragmentFoodListBinding
+import kanti.fooddelivery.ui.common.errorprovider.ErrorProvider
+import kanti.fooddelivery.ui.common.errorprovider.errorProvider
 import kanti.fooddelivery.ui.common.flowobserver.observe
 import kanti.fooddelivery.ui.common.progressindicatorowner.requireProgressIndicator
 import kanti.fooddelivery.ui.fragments.screens.foodlist.viewmodel.FoodDataUiState
@@ -81,6 +84,16 @@ class FoodListScreenFragment : Fragment() {
 
 	private fun showUiStateType(type: RepositoryResult.Type) {
 		when (type) {
+			is RepositoryResult.Type.SuccessRemote -> {
+				errorProvider = null
+			}
+			is RepositoryResult.Type.NoConnection -> {
+				errorProvider = ErrorProvider(
+					getString(R.string.no_connectivity)
+				) {
+					viewModel.getData()
+				}
+			}
 			else -> {}
 		}
 	}

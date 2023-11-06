@@ -18,13 +18,13 @@ class FoodCategoryRepositoryImpl @Inject constructor(
 	override fun getFoodCategories(): Flow<RepositoryResult<List<FoodCategory>>> {
 		return flow {
 			val remoteData = foodCategoryRemote.getFoodCategories()
+			emit(remoteData.toRepositoryResult())
 			if (!remoteData.isSuccess) {
 				val localData = foodCategoryLocal.getFoodCategories()
 				emit(localData.toRepositoryResult())
 				return@flow
 			}
 
-			emit(remoteData.toRepositoryResult())
 			if (!remoteData.isNull) {
 				deleteAllAndInsert(remoteData.value!!)
 			}

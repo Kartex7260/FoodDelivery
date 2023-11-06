@@ -6,4 +6,6 @@
 
     <string name="view_food_card_price_from">fr.</string>
     <string name="view_food_card_price_currency">r</string>
+
+    <string name="no_connectivity">There is no internet connection</string>
 </resources>

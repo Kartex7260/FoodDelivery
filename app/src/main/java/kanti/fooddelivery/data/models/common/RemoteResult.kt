@@ -26,7 +26,7 @@ fun <T> RemoteResult<T>.toRepositoryResult(): RepositoryResult<T> {
 
 fun RemoteResult.Type.toRepositoryType(): RepositoryResult.Type {
 	return when (this) {
-		is RemoteResult.Type.Success -> RepositoryResult.Type.Success
+		is RemoteResult.Type.Success -> RepositoryResult.Type.SuccessRemote
 		is RemoteResult.Type.NoConnection -> RepositoryResult.Type.NoConnection(message)
 		is RemoteResult.Type.NoAuthorization -> RepositoryResult.Type.NoAuthorization(message)
 		is RemoteResult.Type.Fail -> RepositoryResult.Type.Fail(message)

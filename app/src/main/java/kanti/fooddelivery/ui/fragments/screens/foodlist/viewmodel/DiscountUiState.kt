@@ -5,5 +5,5 @@ import kanti.fooddelivery.data.models.discounts.Discount
 
 data class DiscountUiState(
 	val discount: List<Discount>? = null,
-	val type: RepositoryResult.Type = RepositoryResult.Type.Success
+	val type: RepositoryResult.Type = RepositoryResult.Type.SuccessRemote
 )

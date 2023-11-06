@@ -4,18 +4,17 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kanti.fooddelivery.data.models.food.FoodRepository
+import kanti.fooddelivery.data.models.food.FoodRepositoryImpl
 import kanti.fooddelivery.data.models.food.datasources.local.FoodLocalDataSource
 import kanti.fooddelivery.data.models.food.datasources.local.FoodRoomDataSource
 import kanti.fooddelivery.data.models.food.datasources.remote.FoodRemoteDataSource
 import kanti.fooddelivery.data.models.food.datasources.remote.FoodRetrofitDataSource
-import kanti.fooddelivery.data.models.foodcategories.datasource.local.FoodCategoryLocalDataSource
-import kanti.fooddelivery.data.models.foodcategories.datasource.local.FoodCategoryRoomDataSource
-import kanti.fooddelivery.data.models.foodcategories.datasource.remote.FoodCategoryRemoteDataSource
-import kanti.fooddelivery.data.models.foodcategories.datasource.remote.FoodCategoryRetrofitDataSource
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface DataSourceBinds {
+interface FoodBinds {
 
 	@Binds
 	fun bindFoodRetrofitDataSource(dataSource: FoodRetrofitDataSource): FoodRemoteDataSource
@@ -24,13 +23,7 @@ interface DataSourceBinds {
 	fun bindFoodRoomDataSource(dataSource: FoodRoomDataSource): FoodLocalDataSource
 
 	@Binds
-	fun bindFoodCategoriesRetrofitDataSource(
-		dataSource: FoodCategoryRetrofitDataSource
-	): FoodCategoryRemoteDataSource
-
-	@Binds
-	fun bindFoodCategoriesRoomDataSource(
-		dataSource: FoodCategoryRoomDataSource
-	): FoodCategoryLocalDataSource
+	@Singleton
+	fun bindFoodRepositoryImpl(repository: FoodRepositoryImpl): FoodRepository
 
 }

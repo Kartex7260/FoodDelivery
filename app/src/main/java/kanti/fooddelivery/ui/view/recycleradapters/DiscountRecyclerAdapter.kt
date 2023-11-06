@@ -24,14 +24,14 @@ class DiscountRecyclerAdapter(
 
 	class DiscountViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-		val imageView: ShapeableImageView = itemView as ShapeableImageView
+		val imageView = itemView as ShapeableImageView
 
 	}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiscountViewHolder {
 		return DiscountViewHolder(
 			LayoutInflater.from(parent.context)
-				.inflate(R.layout.view_food_list_discount, parent, false) as ShapeableImageView
+				.inflate(R.layout.view_food_list_discount, parent, false)
 		)
 	}
 

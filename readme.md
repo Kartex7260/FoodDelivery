@@ -3,7 +3,7 @@
 ## 1. Используемые технологии
 
 1. Navigation API
-2. MVVM / Clean Arhitectur (ViewModel, StateFlow)
+2. MVVM / Clean Arhitecture (ViewModel, StateFlow)
 3. Dagger / Hilt
 4. Room
 5. Retrofit
